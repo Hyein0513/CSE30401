@@ -1,0 +1,127 @@
+[cluster_bge_hdbscan_30.csv]
+  - 클러스터 수:             29
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4999
+  - Calinski-Harabasz Score: 18.37
+  - Davies-Bouldin Score:    82.7375
+
+[cluster_bge_hdbscan_40.csv]
+  - 클러스터 수:             23
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4823
+  - Calinski-Harabasz Score: 22.46
+  - Davies-Bouldin Score:    112.1501
+
+[cluster_bge_hdbscan_50.csv]
+  - 클러스터 수:             21
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4046
+  - Calinski-Harabasz Score: 34.81
+  - Davies-Bouldin Score:    211.1407
+
+[cluster_e5_hdbscan_30.csv]
+  - 클러스터 수:             36
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.5209
+  - Calinski-Harabasz Score: 56.02
+  - Davies-Bouldin Score:    213.5640
+
+[cluster_e5_hdbscan_40.csv]
+  - 클러스터 수:             26
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4977
+  - Calinski-Harabasz Score: 40.89
+  - Davies-Bouldin Score:    51.7919
+
+[cluster_e5_hdbscan_50.csv]
+  - 클러스터 수:             21
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4879
+  - Calinski-Harabasz Score: 50.29
+  - Davies-Bouldin Score:    43.8093
+
+[cluster_minilm_hdbscan_30.csv]
+  - 클러스터 수:             32
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4664
+  - Calinski-Harabasz Score: 26.15
+  - Davies-Bouldin Score:    87.5519
+
+[cluster_minilm_hdbscan_40.csv]
+  - 클러스터 수:             27
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4266
+  - Calinski-Harabasz Score: 30.18
+  - Davies-Bouldin Score:    95.4643
+
+[cluster_minilm_hdbscan_50.csv]
+  - 클러스터 수:             22
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4321
+  - Calinski-Harabasz Score: 32.00
+  - Davies-Bouldin Score:    47.4506
+
+
+[cluster_bge_kmeans_10.csv]
+  - 클러스터 수:             10
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2921
+  - Calinski-Harabasz Score: 92.80
+  - Davies-Bouldin Score:    33.0932
+
+[cluster_bge_kmeans_15.csv]
+  - 클러스터 수:             15
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2799
+  - Calinski-Harabasz Score: 74.56
+  - Davies-Bouldin Score:    35.2225
+
+[cluster_bge_kmeans_20.csv]
+  - 클러스터 수:             20
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3219
+  - Calinski-Harabasz Score: 77.18
+  - Davies-Bouldin Score:    289.6257
+
+[cluster_e5_kmeans_10.csv]
+  - 클러스터 수:             10
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2505
+  - Calinski-Harabasz Score: 317.65
+  - Davies-Bouldin Score:    8.0055
+
+[cluster_e5_kmeans_15.csv]
+  - 클러스터 수:             15
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2635
+  - Calinski-Harabasz Score: 204.52
+  - Davies-Bouldin Score:    96.4470
+
+[cluster_e5_kmeans_20.csv]
+  - 클러스터 수:             20
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2751
+  - Calinski-Harabasz Score: 235.88
+  - Davies-Bouldin Score:    38.8279
+
+[cluster_minilm_kmeans_10.csv]
+  - 클러스터 수:             10
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3218
+  - Calinski-Harabasz Score: 75.96
+  - Davies-Bouldin Score:    28.3881
+
+[cluster_minilm_kmeans_15.csv]
+  - 클러스터 수:             15
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3479
+  - Calinski-Harabasz Score: 63.57
+  - Davies-Bouldin Score:    86.0611
+
+[cluster_minilm_kmeans_20.csv]
+  - 클러스터 수:             20
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3574
+  - Calinski-Harabasz Score: 54.05
+  - Davies-Bouldin Score:    167.9802
+

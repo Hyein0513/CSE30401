@@ -1,0 +1,144 @@
+[cluster_minilm_hdbscan_10.csv]
+  - 클러스터 수:             2
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3355
+  - Calinski-Harabasz Score: 0.81
+  - Davies-Bouldin Score:    4.0927
+  - 노이즈 수:               0
+  - 노이즈 퍼센트:           0.00%
+
+[cluster_minilm_hdbscan_15.csv]
+  - 클러스터 수:             2
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3355
+  - Calinski-Harabasz Score: 0.81
+  - Davies-Bouldin Score:    4.0927
+  - 노이즈 수:               0
+  - 노이즈 퍼센트:           0.00%
+
+[cluster_minilm_hdbscan_20.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.5342
+  - Calinski-Harabasz Score: 0.70
+  - Davies-Bouldin Score:    3.3426
+  - 노이즈 수:               4
+  - 노이즈 퍼센트:           0.08%
+
+[cluster_minilm_hdbscan_25.csv]
+  - 클러스터 수:             19
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4442
+  - Calinski-Harabasz Score: 35.84
+  - Davies-Bouldin Score:    84.7901
+  - 노이즈 수:               2510
+  - 노이즈 퍼센트:           51.08%
+
+[cluster_mpnet_hdbscan_10.csv]
+  - 클러스터 수:             34
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4838
+  - Calinski-Harabasz Score: 14.85
+  - Davies-Bouldin Score:    186.7948
+  - 노이즈 수:               2171
+  - 노이즈 퍼센트:           44.18%
+
+[cluster_mpnet_hdbscan_15.csv]
+  - 클러스터 수:             28
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4971
+  - Calinski-Harabasz Score: 17.95
+  - Davies-Bouldin Score:    106.3427
+  - 노이즈 수:               2566
+  - 노이즈 퍼센트:           52.22%
+
+[cluster_mpnet_hdbscan_20.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.0450
+  - Calinski-Harabasz Score: 0.42
+  - Davies-Bouldin Score:    62.6996
+  - 노이즈 수:               156
+  - 노이즈 퍼센트:           3.17%
+
+[cluster_mpnet_hdbscan_25.csv]
+  - 클러스터 수:             16
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4506
+  - Calinski-Harabasz Score: 13.54
+  - Davies-Bouldin Score:    364.1977
+  - 노이즈 수:               2235
+  - 노이즈 퍼센트:           45.48%
+
+[cluster_paraphrase_hdbscan_10.csv]
+  - 클러스터 수:             40
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.5276
+  - Calinski-Harabasz Score: 23.24
+  - Davies-Bouldin Score:    145.7701
+  - 노이즈 수:               2619
+  - 노이즈 퍼센트:           53.30%
+
+[cluster_paraphrase_hdbscan_15.csv]
+  - 클러스터 수:             4
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4198
+  - Calinski-Harabasz Score: 0.79
+  - Davies-Bouldin Score:    19.2499
+  - 노이즈 수:               126
+  - 노이즈 퍼센트:           2.56%
+
+[cluster_paraphrase_hdbscan_20.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3874
+  - Calinski-Harabasz Score: 1.65
+  - Davies-Bouldin Score:    6.2394
+  - 노이즈 수:               97
+  - 노이즈 퍼센트:           1.97%
+
+[cluster_paraphrase_hdbscan_25.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3927
+  - Calinski-Harabasz Score: 1.52
+  - Davies-Bouldin Score:    6.9991
+  - 노이즈 수:               115
+  - 노이즈 퍼센트:           2.34%
+
+[cluster_t5_hdbscan_10.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2089
+  - Calinski-Harabasz Score: 0.28
+  - Davies-Bouldin Score:    20.8101
+  - 노이즈 수:               3
+  - 노이즈 퍼센트:           0.06%
+
+[cluster_t5_hdbscan_15.csv]
+  - 클러스터 수:             3
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.4190
+  - Calinski-Harabasz Score: 0.46
+  - Davies-Bouldin Score:    5.1107
+  - 노이즈 수:               11
+  - 노이즈 퍼센트:           0.22%
+
+[cluster_t5_hdbscan_20.csv]
+  - 클러스터 수:             13
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.3003
+  - Calinski-Harabasz Score: 166.19
+  - Davies-Bouldin Score:    77.7047
+  - 노이즈 수:               1714
+  - 노이즈 퍼센트:           34.88%
+
+[cluster_t5_hdbscan_25.csv]
+  - 클러스터 수:             11
+  - 리뷰 수:                 4914
+  - Silhouette Score:        -0.2436
+  - Calinski-Harabasz Score: 198.90
+  - Davies-Bouldin Score:    76.6254
+  - 노이즈 수:               1732
+  - 노이즈 퍼센트:           35.25%
+
