@@ -1,0 +1,6 @@
+file_id,cluster_id,sentence,error
+cluster_minilm_hdbscan_2,155,e um nothing much to really say about it .,Triplet extraction failed: can't assign a NoneType to a torch.LongTensor
+cluster_mpnet_kmeans_20,1,"comes with a small card and an next size up adapters -'send' it is an ultra fast branded micro card that is great for digital cameras, especially for the",Triplet extraction failed: can't assign a NoneType to a torch.LongTensor
+cluster_paraphrase_hdbscan_2,473,"amazon comes through again!speed unknown, works fine in all my stuff -addenda 9 19 13 two received and working perfectly!",Triplet extraction failed: can't assign a NoneType to a torch.LongTensor
+cluster_paraphrase_hdbscan_40,9,"it came with 16gb, with about 12gg usable.installed this to store movies for long trips -holds about 10 full length compressed mp4 movies!",Triplet extraction failed: can't assign a NoneType to a torch.LongTensor
+cluster_t5_hdbscan_2,282,"up until now i had an overall neutral to favorable opinion of them, not anymore.if you think i am overreacting, please just skim through a few pages submitted in springtime of 2013. there is at least one or more 6 months and it failed reviews per page.",Triplet extraction failed: can't assign a NoneType to a torch.LongTensor

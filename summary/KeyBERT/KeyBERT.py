@@ -5,8 +5,8 @@ from collections import defaultdict
 
 # ✅ 현재 스크립트 위치 기준으로 경로 설정
 script_dir = os.path.dirname(os.path.abspath(__file__))
-input_dir = os.path.abspath(os.path.join(script_dir, "../../cluster/results/cluster"))
-output_dir = os.path.join(script_dir, "summary_1_KeyBERT")
+input_dir = os.path.abspath(os.path.join(script_dir, "../../cluster/results2/cluster"))
+output_dir = os.path.join(script_dir, "summary_2_KeyBERT")
 os.makedirs(output_dir, exist_ok=True)
 
 # ✅ KeyBERT 모델 로딩

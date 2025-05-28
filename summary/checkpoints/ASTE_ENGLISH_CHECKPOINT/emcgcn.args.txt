@@ -1,0 +1,57 @@
+model: <class 'pyabsa.tasks.AspectSentimentTripletExtraction.models.model.EMCGCN'>
+task: triplet
+optimizer: adamw
+learning_rate: 2e-05
+cache_dataset: False
+warmup_step: -1
+max_seq_len: 200
+patience: 99999
+l2reg: 1e-06
+num_epoch: 100
+batch_size: 16
+seed: 52
+output_dim: 10
+log_step: 226
+evaluate_begin: 0
+cross_validate_fold: -1
+use_amp: True
+adam_epsilon: 1e-08
+emb_dropout: 0.5
+num_layers: 1
+pooling: avg
+gcn_dim: 300
+relation_constraint: True
+symmetry_decoding: False
+pretrained_bert: microsoft/deberta-v3-base
+dataset: semeval
+checkpoint_save_mode: 1
+auto_device: True
+path_to_save: None
+load_aug: False
+device: cuda:1
+device_name: NVIDIA GeForce RTX 3090
+model_name: emcgcn
+hidden_dim: 768
+PyABSAVersion: 2.1.0
+TransformersVersion: 4.24.0
+TorchVersion: 1.13.0a0+git2e883d4+cuda11.2
+dataset_name: custom_dataset
+save_mode: 1
+logger: <Logger emcgcn (INFO)>
+task_code: ASTE
+task_name: Aspect Sentiment Triple Extraction
+dataset_file: {'train': ['integrated_datasets/aste_datasets/400.SemEval/404.Restautant16/train.txt', 'integrated_datasets/aste_datasets/400.SemEval/403.Restautant15/train.txt', 'integrated_datasets/aste_datasets/400.SemEval/402.Restautant14/train.txt', 'integrated_datasets/aste_datasets/400.SemEval/401.Laptop14/train.txt'], 'test': ['integrated_datasets/aste_datasets/400.SemEval/403.Restautant15/test.txt', 'integrated_datasets/aste_datasets/400.SemEval/401.Laptop14/test.txt', 'integrated_datasets/aste_datasets/400.SemEval/404.Restautant16/test.txt', 'integrated_datasets/aste_datasets/400.SemEval/402.Restautant14/test.txt'], 'valid': ['integrated_datasets/aste_datasets/400.SemEval/403.Restautant15/dev.txt', 'integrated_datasets/aste_datasets/400.SemEval/401.Laptop14/dev.txt', 'integrated_datasets/aste_datasets/400.SemEval/402.Restautant14/dev.txt', 'integrated_datasets/aste_datasets/400.SemEval/404.Restautant16/dev.txt']}
+model_path_to_save: checkpoints
+spacy_model: en_core_web_sm
+label_to_index: OrderedDict([('N', 0), ('B-A', 1), ('I-A', 2), ('A', 3), ('B-O', 4), ('I-O', 5), ('O', 6), ('Negative', 7), ('Neutral', 8), ('Positive', 9)])
+index_to_label: OrderedDict([(0, 'N'), (1, 'B-A'), (2, 'I-A'), (3, 'A'), (4, 'B-O'), (5, 'I-O'), (6, 'O'), (7, 'Negative'), (8, 'Neutral'), (9, 'Positive')])
+post_vocab: <pyabsa.tasks.AspectSentimentTripletExtraction.dataset_utils.aste_utils.VocabHelp object at 0x7efe6fb20310>
+deprel_vocab: <pyabsa.tasks.AspectSentimentTripletExtraction.dataset_utils.aste_utils.VocabHelp object at 0x7efe6fb20d60>
+postag_vocab: <pyabsa.tasks.AspectSentimentTripletExtraction.dataset_utils.aste_utils.VocabHelp object at 0x7efe6fb20880>
+syn_post_vocab: <pyabsa.tasks.AspectSentimentTripletExtraction.dataset_utils.aste_utils.VocabHelp object at 0x7efe6fb20c40>
+post_size: 85
+deprel_size: 48
+postag_size: 164
+synpost_size: 7
+metrics_of_this_checkpoint: {'f1': 0.7470951792336217}
+max_test_metrics: {'max_apc_test_f1': 0.7470951792336217}
