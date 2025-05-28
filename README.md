@@ -1,68 +1,48 @@
-# CSE30401
- Introduction to Data Mining - Final Project
+# CSE30401  
+Introduction to Data Mining - Final Project
 
+## Project Overview
 
+This project proposes and validates a set of **reference-free evaluation metrics** for summarizing user reviews on e-commerce platforms — where creating gold-standard reference summaries is often impractical or impossible.
 
-1. 연구 배경 
-    : 리뷰는 비정형 텍스트로 제공되며, 핵심 정보를 빠르게 파악하기 어려움
-    : 별점(평점)은 리뷰의 실제 의미를 정확히 반영하지 못함 
-        - 감정과 점수의 불일치(기대에는 못미치지만 그냥 쓸게요 등 )
-        - 제품과 무관한 요소(배송, 포장 상태 등) 이 평점에 영향
-    : 기존 연구들은 리뷰 텍스트를 그대로 요약하거나, 감정 분석에 집중하는 경향
-        - 리뷰 클러스터 단위의 요약(정답 요약이 없는 상황에서)
-        - 리뷰 요약의 정보 보존성 평가가 드뭄
-    
-    -> 평점은 리뷰의 실제 의미를 왜곡하고(사람마다 5점 주고 3점 주는 기준이 다름), 리뷰 요약은 정보 손실 가능성이 있으며(맥락 사라지는 등), 요약 품질을 평가할 수 있는 요약 gt 가 존재하지 않는 상황에서 기존 요약 평가 지표들은 적절하지 않다
-    SUSWIR이나 SRNR이나 SE-tiny나 SummEval-OP같은 것들은 참조 요약 없이 요약 품질을 평가하는 거지만, 대부분 1개의 문서를 1개의 요약으로 모으는 환경을 가정함. 뭐 하나의 클러스터를 하나의 문서로 보면 원래 평가 지표 쓰면 되지만, 쟤들은 뉴스 기사나 챗 로그 등 일관된 톤과 구조를 가진 문서를 요약하는걸 목표로 함. 따라서 문장 유창성, 중복성 제거, 의미 유사성 등의 일반적인 품질 요소를 측정하려고함. 그치만 나는? 다수의 사용자가 포맷 없이 발화한 리뷰들이 섞인 클러스터를 적절하게 의미 왜곡 없이 감정 오류 없이 정보 누락 없이 요약했는지를 평가하고자 함  이걸 해결하려고 함  이게 될지는 모르겟지만? 일단 챌린지 요소? 가 되지 않?을까? 
+User reviews contain rich, real-world insights about products, but their **unstructured format** and overwhelming volume make it difficult for consumers to extract meaningful information efficiently. Traditional summarization systems — especially those designed for structured texts like news articles — often fall short when applied to heterogeneous and informal data like user reviews. Furthermore, most existing evaluation metrics assume the presence of a reference summary, which is **not feasible** for diverse review clusters.
 
-2. 연구 목표 및 질문
-    먼저 3가지의 리뷰 클러스터링 평가 지표 제안 
-    1. KCS(Keyword Voberage Score)
-        : 정보 보존성 
-        : 클러스터 핵심 키워드가 요약에 얼마나 포함되어있는가 
-    2. SRS(Semantic Retention Score)
-        : 의미 보존성
-        : 클러스터의 전체 의미와 요약 간 의미 유사도 
-    3. SCS(Sentiment Consistency Score)
-        : 감정 보존성
-        : 클러스터 리뷰 감정과 요약 감정이 얼마나 일치하는가 
+To address this gap, we:
 
-    : 평점 중심 리뷰 분류는 실제 의미 기반 클러스터링에 비해 정보 구조화 품질이 낮은가?
-    : extractive vs Abstactive 요약 중, 어떤 방식이 의미/감정/정보 보존 측면에서 우수한가?
-    : 이 연구에서 제안한 평가 지표(KCS, SRS, SCS 등)은 기존 요약 평가 지표의 한계를 보완하며 유효하게 작동하는가?
-    : 이 연구에서 제안한 평가 지표가 클러스터링 모델 및 임베딩 모델의 선택의 기준으로 유효한가?
-    : 기존 참조 없는 요약 평가 지표들(SUSWIR이나 SRNR이나 SE-tiny나 SummEval-OP)은 리뷰 클러스터 요약에 적용 가능하며 유효한가?
-    : 이 연구에서 제안한 평가 지표가 기존 지표들이 측정하지 못하는 정보를 포착하는가?
-    : 두 지표 그룹은 어떻게 다른가? 실제 요약 품질에는 어떤 차이를 보이는가(정성적 평가 진행 -> 해봤자 친구 두명이긴함.)
+- Cluster user reviews using various **semantic embedding models** and **clustering algorithms**,
+- Apply both **extractive** (Centroid, KeyBERT) and **abstractive** (T5) summarization methods to each cluster,
+- Propose four new **reference-free evaluation metrics** to assess the quality of review cluster summaries from a user-centric perspective.
 
-3. 실험 설계
-    1. amazon review dataset 사용 
-        - https://www.kaggle.com/datasets/tarkkaanko/amazon
-        - 리뷰 1000-1500개 이상, 클러스터가 최소 8개 이상, 클러스터당 리뷰 2-30개 정도? 되려나? 모르겟어요 크면 클수록 좋을 것 같긴한데 
-    2. 데이터 정제 
-        - 소문자 정제 등 
-    3. 의미 임베딩 모델 3종 
-        - MinLM, BGE-small, E5-small
-    4. 클러스터링 알고리즘 2종
-        - Kmeans, HDBSCAN 
-    5. 요약 방식 3종
-        - KeyBERT(Extractive, 키워드 중심 핵심 문장 추출), T5-small(Sbstractive, 경량 llm), Centroid-based Summarization(클러스터 내 평균 벡터 구해서 그거랑 유사한 문장을 요약으로 선정), 가능하다면 prompt-based T5(같은 llm 도? 가능하다면? 대형이라 안될것같음 기간내에는)
-    6. 3, 4, 5번의 교차 실험 진행 3 * 2 * 3 = 18 개의 교차 실험 
-    7. 원래 사용하는 참조 요약 없는 평가 지표 3개와 이 연구에서 제안하는 평가 지표 3개를 비교 
-        - USWIR, SRNR, SummEval-OP 일부 항목
-        - KCS, SRS, SCS 
-            : KCS(Keyword Converage Score)
-                - 클러스터 내 리뷰에서 TF-IDF나 KeyBERT 등으로 상위 N개 키워드 추출 후, 요약 문장에서 이 키워드가 몇개 등장하는지를 비율로 계산 
-                - 0~1 높을수록 정보 보존 우수 
-            : SRS(Semantic Retention Score)
-                - 클러스터 내 모든 리뷰를 임베딩 벡터화하고, 벡터의 평균값을 구하고, 요약문도 임베딩하고, 요약문과 벡터의 평균값의 cosine  유사도 계산 
-                - -1~1 높을수록 의미 일치 우수 
-            : SCS(Sentiment Consistency Score)
-                - 클러스터 내 각 리뷰의 감정을 찾고 평균 감정과 요약 감정간의 차이 계산 
-                - 0~1 높을수록 감정이 완벽하게 일치 
-    8. 전체적인 정리 -> 보고서 작성
-        - 각 조합의 요약 → KCS, SRS, SCS 점수 계산
-        - 요약 방식별 평균 비교
-        - 지표 간 상관 분석 (기존 vs 제안)
-        - 대표 요약 예시의 정성 평가
-        - 클러스터별 시각화 (UMAP 등)
+### Proposed Evaluation Metrics
+
+| Metric Name                | Description                                                                                     |
+|---------------------------|-------------------------------------------------------------------------------------------------|
+| `Redundancy`              | Measures sentence-level similarity to penalize repetition                                       |
+| `BUYSUMM_FIXED`           | Checks whether key product attributes are mentioned                                             |
+| `BUYSUMM_REF`             | Evaluates coverage of important cluster-specific keywords (via KeyBERT)                         |
+| `IVD` (Info Value Density)| Assesses how much useful information is packed into each sentence (via aspect-opinion triplets) |
+
+Unlike traditional metrics focused on linguistic accuracy or surface-level similarity, our metrics are designed to evaluate **practical utility**, i.e., whether the summary helps users make better purchase decisions.
+
+We conducted experiments with **60 system configurations** (5 embeddings × 2 clustering methods × 3 summarization models), and confirmed that the proposed metrics capture dimensions of summary quality that are **not reflected in traditional metrics** like ROUGE or BERTScore.
+
+---
+
+## Conclusion & Contributions
+
+This project introduces a novel, **reference-free evaluation framework** specifically designed for **cluster-level summarization of e-commerce reviews** — a domain where traditional metrics fail due to the absence of ground-truth summaries and the unstructured, user-generated nature of the content.
+
+### Key Contributions
+
+- **New Evaluation Metrics**: We propose four quantitative, interpretable metrics — `Redundancy`, `BUYSUMM_FIXED`, `BUYSUMM_REF`, and `IVD` — tailored for assessing the usefulness of review cluster summaries without requiring any reference data.
+- **Comprehensive Experimental Validation**: We benchmarked 60 configurations combining various embeddings, clustering, and summarization methods, showing that the proposed metrics successfully capture distinct quality aspects of summaries.
+- **User-Centered Evaluation Perspective**: Unlike ROUGE or BLEU, our metrics evaluate how well summaries reflect product attributes, reduce redundancy, and deliver compact, decision-supportive information to users.
+- **Metric Independence & Complementarity**: Correlation analysis shows that our metrics (especially `IVD`) measure unique aspects of summary quality, offering a more **holistic evaluation** when combined with traditional metrics.
+
+### Future Directions
+
+- **Human-centered evaluation**: Incorporate user studies to correlate metric scores with perceived summary helpfulness.
+- **Product category-specific tuning**: Adapt the evaluation framework to different e-commerce verticals (e.g., electronics, beauty, fashion).
+- **Deployment optimization**: Develop lightweight summarization-evaluation pipelines for real-time commercial applications.
+
+By enabling robust and scalable evaluation of review cluster summaries without relying on expensive human annotations, this work lays the foundation for more **intelligent, user-friendly review summarization systems** in real-world e-commerce settings.
