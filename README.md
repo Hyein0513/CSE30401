@@ -1,6 +1,20 @@
 # CSE30401  
 Introduction to Data Mining - Final Project
 
+
+## Project Directory Description
+
+Folders with the _fin suffix (e.g., cluster/cluster_fin, embed/embed_fin, output_fin, summary/summary_fin, summary/eval_fin) contain result CSV files from various experiment configurations.
+
+Approximately 5,000 user reviews were processed for each configuration across combinations of embedding models, clustering algorithms, and summarization methods.
+
+For every configuration, the 5,000 reviews were clustered and summarized; the summaries are stored in summary/{summarizer_name}/summary_{summarizer_name}/.
+
+Each summary file contains multiple clusters, and the proposed evaluation metrics were computed for each cluster, then averaged across clusters to produce a single score per configuration.
+
+These aggregated results are compiled in output_fin/merged_stats_fin_fin_fin.csv.
+
+
 ## Project Overview
 
 This project proposes and validates a set of **reference-free evaluation metrics** for summarizing user reviews on e-commerce platforms — where creating gold-standard reference summaries is often impractical or impossible.
